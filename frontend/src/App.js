@@ -64,7 +64,7 @@ function App() {
                 }/>
                 <Route path="/transactions" element={
                   <RequireAuth>
-                    <Protected/>
+                    <Transactions/>
                   </RequireAuth>
                 }/>
                 <Route path="/marketplace" element={
@@ -84,7 +84,7 @@ function App() {
                 }/>
                 <Route path="/accounts" element={
                   <RequireAuth>
-                    <Accounts/>
+                    <Protected/>
                   </RequireAuth>
                 }/>
                 <Route path="/settings" element={
