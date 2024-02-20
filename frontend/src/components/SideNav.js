@@ -9,6 +9,7 @@ import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import ReceiptIcon from '@mui/icons-material/Receipt';
 import AutoGraphIcon from '@mui/icons-material/AutoGraph';
 import SettingsIcon from '@mui/icons-material/Settings';
+import { Image } from '@mui/icons-material';
 
 export default function SideNav () {
 
@@ -45,6 +46,7 @@ export default function SideNav () {
                 backgroundColor={theme.palette.neutral}
                 >
                     <Box sx={ styles.avatarContainer }>
+                        <Image sx={ styles.logo } src={ '../assets/me.jpeg' } alt='logo' />
                         {/* <Avatar sx={ styles.avatar }  alt={ user } src={ user  } /> */}
                     </Box>
                     <Menu>
