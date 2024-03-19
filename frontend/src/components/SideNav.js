@@ -21,44 +21,50 @@ export default function SideNav () {
         }
     }
 
+    const { route } = useAuthenticator((context) => [context.route]);
     const theme = useTheme()
-    return (
-    <>
-        <ThemeProvider theme= {theme}>
-            <Sidebar style={{
-                height: '100%',
-                top: 'auto',
 
-            }}
-            breakPoint='md'
-            backgroundColor={theme.palette.neutral}
-            >
-                <Menu>
-                    <MenuItem active component={<Link to="/dashboard" />} icon={<DashboardIcon></DashboardIcon>}> 
-                        <Typography variant='body2'> Dashboard </Typography>
-                    </MenuItem>
-                    <MenuItem component={<Link to="/transactions" />} icon={<PointOfSaleIcon></PointOfSaleIcon>}> 
-                        <Typography variant='body2'> Transactions </Typography>
-                    </MenuItem>
-                    <MenuItem component={<Link to="/marketplace" />} icon={<StorefrontIcon></StorefrontIcon>}> 
-                        <Typography variant='body2'> Marketplace </Typography>
-                    </MenuItem>
-                    <MenuItem component={<Link to="/accounts" />} icon={<AccountBalanceIcon></AccountBalanceIcon>}> 
-                        <Typography variant='body2'> Accounts </Typography>
-                    </MenuItem>
-                    <MenuItem component={<Link to="/bills" />} icon={<ReceiptIcon></ReceiptIcon>}> 
-                        <Typography variant='body2'> Bills </Typography>
-                    </MenuItem>
-                    <MenuItem component={<Link to="/analytics" />} icon={<AutoGraphIcon></AutoGraphIcon>}> 
-                        <Typography variant='body2'> Analytics </Typography>
-                    </MenuItem>
-                    <MenuItem component={<Link to="/settings" />} icon={<SettingsIcon></SettingsIcon>}> 
-                        <Typography variant='body2'> Settings </Typography>
-                    </MenuItem>
-                </Menu>
-            </Sidebar>
-        </ThemeProvider>
-    </>
+    if (route === 'authenticated') {
+        return (
+            <>
+                <ThemeProvider theme= {theme}>
+                    <Sidebar style={{
+                        height: '100%',
+                        top: 'auto',
+        
+                    }}
+                    breakPoint='md'
+                    backgroundColor={theme.palette.neutral}
+                    >
+                        <Menu>
+                            <MenuItem active component={<Link to="/dashboard" />} icon={<DashboardIcon></DashboardIcon>}> 
+                                <Typography variant='body2'> Dashboard </Typography>
+                            </MenuItem>
+                            <MenuItem component={<Link to="/transactions" />} icon={<PointOfSaleIcon></PointOfSaleIcon>}> 
+                                <Typography variant='body2'> Transactions </Typography>
+                            </MenuItem>
+                            <MenuItem component={<Link to="/marketplace" />} icon={<StorefrontIcon></StorefrontIcon>}> 
+                                <Typography variant='body2'> Marketplace </Typography>
+                            </MenuItem>
+                            <MenuItem component={<Link to="/accounts" />} icon={<AccountBalanceIcon></AccountBalanceIcon>}> 
+                                <Typography variant='body2'> Accounts </Typography>
+                            </MenuItem>
+                            <MenuItem component={<Link to="/bills" />} icon={<ReceiptIcon></ReceiptIcon>}> 
+                                <Typography variant='body2'> Bills </Typography>
+                            </MenuItem>
+                            <MenuItem component={<Link to="/analytics" />} icon={<AutoGraphIcon></AutoGraphIcon>}> 
+                                <Typography variant='body2'> Analytics </Typography>
+                            </MenuItem>
+                            <MenuItem component={<Link to="/settings" />} icon={<SettingsIcon></SettingsIcon>}> 
+                                <Typography variant='body2'> Settings </Typography>
+                            </MenuItem>
+                        </Menu>
+                    </Sidebar>
+                </ThemeProvider>
+            </>
+        )
+    }
 
-    )
+
+    
 }
