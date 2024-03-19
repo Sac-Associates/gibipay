@@ -9,7 +9,7 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { Box, CssBaseline, ThemeProvider, Typography } from '@mui/material';
-// import theme from './config/Theme.js';
+import theme from './config/Theme';
 import Transactions from './containers/Transactions';
 import Bills from './containers/Bills';
 import Analyics from './containers/Analytics';
@@ -32,7 +32,7 @@ function App() {
   return (
     <>
       <CssBaseline/>
-      {/* <ThemeProvider theme = {theme} > */}
+      <ThemeProvider theme = {theme} >
         <Authenticator.Provider>
           <BrowserRouter>
             <Routes>
@@ -85,7 +85,7 @@ function App() {
             </Routes>
           </BrowserRouter>
         </Authenticator.Provider>
-      {/* </ThemeProvider> */}
+      </ThemeProvider>
     </>
   );
 }
