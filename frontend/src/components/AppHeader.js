@@ -36,38 +36,40 @@ function AppHeader() {
         context.user
       ]);
 
-    return (
-        <>
-            <CssBaseline/>
-            {/* <ThemeProvider theme = {theme}> */}
-                <AppBar position='float' sx={styles.appBar}>
-                    <Toolbar>
-                        <IconButton onClick={() => console.log("Buton clicked")} color='secondary'>
-                            <MenuTowToneIcon></MenuTowToneIcon>
-                        </IconButton>
-                        {/* <Box 
-                            component='img'
-                            sx={styles.appLogo}
-                            src='../assets/me.jpeg'>
+    if (route === 'authenticated') {
+        return (
+            <>
+                <CssBaseline/>
+                {/* <ThemeProvider theme = {theme}> */}
+                    <AppBar position='float' sx={styles.appBar}>
+                        <Toolbar>
+                            <IconButton onClick={() => console.log("Buton clicked")} color='secondary'>
+                                <MenuTowToneIcon></MenuTowToneIcon>
+                            </IconButton>
+                            {/* <Box 
+                                component='img'
+                                sx={styles.appLogo}
+                                src='../assets/me.jpeg'>
 
-                        </Box> */}
-                        <Box sx={{ flexGrow: 1 }}/>
-                        <IconButton title='Notifications' color='secondary' onClick={() => console.log("Notification button clicked")}>
-                            <Badge badgeContent={4} color='error'>
-                                <CircleNotificationsIcon/>
-                            </Badge>
-                        </IconButton>
-                        <IconButton title="Settings" onClick={() => console.log("Settings button clicked")} color='secondary'>
-                            <SettingsIcon/>
-                        </IconButton>
-                        <IconButton title="Log out" onClick={() => logOut() } color='secondary'>
-                            <ExitToAppIcon/>
-                        </IconButton>
-                    </Toolbar>
-                </AppBar>
-            {/* </ThemeProvider> */}
-        </>
-    )
+                            </Box> */}
+                            <Box sx={{ flexGrow: 1 }}/>
+                            <IconButton title='Notifications' color='secondary' onClick={() => console.log("Notification button clicked")}>
+                                <Badge badgeContent={4} color='error'>
+                                    <CircleNotificationsIcon/>
+                                </Badge>
+                            </IconButton>
+                            <IconButton title="Settings" onClick={() => console.log("Settings button clicked")} color='secondary'>
+                                <SettingsIcon/>
+                            </IconButton>
+                            <IconButton title="Log out" onClick={() => logOut() } color='secondary'>
+                                <ExitToAppIcon/>
+                            </IconButton>
+                        </Toolbar>
+                    </AppBar>
+                {/* </ThemeProvider> */}
+            </>
+        )
+    }
 }
 
 export default AppHeader;
