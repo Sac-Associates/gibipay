@@ -3,7 +3,7 @@ import MenuTowToneIcon from '@mui/icons-material/MenuTwoTone';
 import CircleNotificationsIcon from '@mui/icons-material/CircleNotifications';
 import { Badge } from '@mui/material';
 import SettingsIcon from '@mui/icons-material/Settings';
-import theme from '../config/theme';
+import theme from '../config/Theme';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import { useNavigate } from 'react-router-dom';
 import { useAuthenticator, Button } from '@aws-amplify/ui-react';
@@ -40,12 +40,17 @@ function AppHeader() {
         <>
             <CssBaseline/>
             <ThemeProvider theme = {theme}>
-                <AppBar position='sticky' sx={styles.appBar}>
+                <AppBar position='float' sx={styles.appBar}>
                     <Toolbar>
                         <IconButton onClick={() => console.log("Buton clicked")} color='secondary'>
                             <MenuTowToneIcon></MenuTowToneIcon>
                         </IconButton>
+                        {/* <Box 
+                            component='img'
+                            sx={styles.appLogo}
+                            src='../assets/me.jpeg'>
 
+                        </Box> */}
                         <Box sx={{ flexGrow: 1 }}/>
                         <IconButton title='Notifications' color='secondary' onClick={() => console.log("Notification button clicked")}>
                             <Badge badgeContent={4} color='error'>

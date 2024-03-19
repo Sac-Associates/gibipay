@@ -12,7 +12,7 @@ export default function Layout() {
     container: {
         display: 'flex',
         bgcolor: 'neutral.light',
-        height: 'calc(100% - 64px)'
+        height: '100%'
     },
     mainSection: {
       p: 1,
@@ -39,13 +39,13 @@ export default function Layout() {
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline/>
-          <AppHeader/>
-          <Box sx={styles.container}>
-            <SideNav/>
-            <Box component={'main'} sx={styles.mainSection}>
-              <Outlet />
-            </Box>
+        <AppHeader/>
+        <Box sx={styles.container}>
+          <SideNav/>
+          <Box component={'main'} sx={styles.mainSection}>
+            <Outlet />
           </Box>
+        </Box>
       </ThemeProvider>
 
     </>

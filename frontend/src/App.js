@@ -1,18 +1,15 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Authenticator } from "@aws-amplify/ui-react";
-import Protected from './pages/Protected';
 import Login from './pages/Login';
-import Institution from './pages/Institution';
 import Layout from './components/Layout';
 import RequireAuth from './RequireAuth';
-
 import './App.css';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { Box, CssBaseline, ThemeProvider, Typography } from '@mui/material';
-import theme from './config/theme';
+import theme from './config/Theme';
 import Transactions from './containers/Transactions';
 import Bills from './containers/Bills';
 import Analyics from './containers/Analytics';
@@ -28,7 +25,7 @@ function App() {
     container: {
         display: 'flex',
         bgcolor: 'neutral.light',
-        height: 'calc(100% - 64px)'
+        height: 'calc(100%)'
     },
   }
 
@@ -39,58 +36,50 @@ function App() {
         <Authenticator.Provider>
           <BrowserRouter>
             <Routes>
-              <Route path="/" element={<Layout />}>
+              <Route element={<Layout />}>
                 <Route
                   index
                   element={
                     <RequireAuth>
-                      <Protected />
-                    </RequireAuth>
-                  }
-                />
-                <Route
-                  path="/institution/:id"
-                  element={
-                    <RequireAuth>
-                      <Institution />
+                      <Dashboard />
                     </RequireAuth>
                   }
                 />
                 <Route path="/login" element={<Login />} />
                 <Route path="/dashboard" element={
-                  <RequireAuth>
+                  // <RequireAuth>
                     <Dashboard/>
-                  </RequireAuth>
+                  // </RequireAuth>
                 }/>
-                <Route path="/transactions" element={
-                  <RequireAuth>
+                <Route path="transactions" element={
+                  // <RequireAuth>
                     <Transactions/>
-                  </RequireAuth>
+                  // </RequireAuth>
                 }/>
-                <Route path="/marketplace" element={
-                  <RequireAuth>
+                <Route path="marketplace" element={
+                  // <RequireAuth>
                     <Marketplace/>
-                  </RequireAuth>
+                  // </RequireAuth>
                 }/>
-                <Route path="/bills" element={
-                  <RequireAuth>
+                <Route path="bills" element={
+                  // <RequireAuth>
                     <Bills/>
-                  </RequireAuth>
+                  // </RequireAuth>
                 }/>
-                <Route path="/analytics" element={
-                  <RequireAuth>
+                <Route path="analytics" element={
+                  // <RequireAuth>
                     <Analyics/>
-                  </RequireAuth>
+                  // </RequireAuth>
                 }/>
-                <Route path="/accounts" element={
-                  <RequireAuth>
-                    <Protected/>
-                  </RequireAuth>
+                <Route path="accounts" element={
+                  // <RequireAuth>
+                    <Accounts/>
+                  // </RequireAuth>
                 }/>
-                <Route path="/settings" element={
-                  <RequireAuth>
+                <Route path="settings" element={
+                  // <RequireAuth>
                     <Settings/>
-                  </RequireAuth>
+                  // </RequireAuth>
                 }/>
               </Route>
             </Routes>
