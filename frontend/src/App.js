@@ -8,7 +8,7 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
-import { Box, CssBaseline, ThemeProvider, Typography } from '@mui/material';
+import { Box, CssBaseline, ThemeProvider, Typography, useTheme } from '@mui/material';
 // import theme from './config/Theme';
 import Transactions from './containers/Transactions';
 import Bills from './containers/Bills';
@@ -28,11 +28,12 @@ function App() {
         height: 'calc(100%)'
     },
   }
+  const theme = useTheme()
 
   return (
     <>
       <CssBaseline/>
-      {/* <ThemeProvider theme = {theme} > */}
+      <ThemeProvider theme = {theme} >
         <Authenticator.Provider>
           <BrowserRouter>
             <Routes>
@@ -85,7 +86,7 @@ function App() {
             </Routes>
           </BrowserRouter>
         </Authenticator.Provider>
-      {/* </ThemeProvider> */}
+      </ThemeProvider>
     </>
   );
 }

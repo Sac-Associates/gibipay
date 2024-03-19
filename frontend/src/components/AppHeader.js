@@ -1,9 +1,8 @@
-import { AppBar, Box, CssBaseline, IconButton, ThemeProvider, Toolbar } from '@mui/material';
+import { AppBar, Box, CssBaseline, IconButton, ThemeProvider, Toolbar, useTheme } from '@mui/material';
 import MenuTowToneIcon from '@mui/icons-material/MenuTwoTone';
 import CircleNotificationsIcon from '@mui/icons-material/CircleNotifications';
 import { Badge } from '@mui/material';
 import SettingsIcon from '@mui/icons-material/Settings';
-// import theme from '../config/Theme';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import { useNavigate } from 'react-router-dom';
 import { useAuthenticator, Button } from '@aws-amplify/ui-react';
@@ -22,7 +21,9 @@ function AppHeader() {
             cursor: 'pointer'
         }
     }
-    
+
+    const theme = useTheme()
+
     function logOut() {
         signOut();
         navigate('/login');
@@ -40,7 +41,7 @@ function AppHeader() {
         return (
             <>
                 <CssBaseline/>
-                {/* <ThemeProvider theme = {theme}> */}
+                <ThemeProvider theme = {theme}>
                     <AppBar position='float' sx={styles.appBar}>
                         <Toolbar>
                             <IconButton onClick={() => console.log("Buton clicked")} color='secondary'>
@@ -66,7 +67,7 @@ function AppHeader() {
                             </IconButton>
                         </Toolbar>
                     </AppBar>
-                {/* </ThemeProvider> */}
+                </ThemeProvider>
             </>
         )
     }
