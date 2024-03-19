@@ -33,10 +33,6 @@ export default function SideNav () {
             breakPoint='md'
             backgroundColor={theme.palette.neutral}
             >
-                <Box sx={ styles.avatarContainer }>
-                    <Image sx={ styles.logo } src={ '../assets/me.jpeg' } alt='logo' />
-                    {/* <Avatar sx={ styles.avatar }  alt={ user } src={ user  } /> */}
-                </Box>
                 <Menu>
                     <MenuItem active component={<Link to="/dashboard" />} icon={<DashboardIcon></DashboardIcon>}> 
                         <Typography variant='body2'> Dashboard </Typography>
