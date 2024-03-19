@@ -47,39 +47,39 @@ function App() {
                 />
                 <Route path="/login" element={<Login />} />
                 <Route path="/dashboard" element={
-                  // <RequireAuth>
+                  <RequireAuth>
                     <Dashboard/>
-                  // </RequireAuth>
+                  </RequireAuth>
                 }/>
                 <Route path="transactions" element={
-                  // <RequireAuth>
+                  <RequireAuth>
                     <Transactions/>
-                  // </RequireAuth>
+                  </RequireAuth>
                 }/>
                 <Route path="marketplace" element={
-                  // <RequireAuth>
+                  <RequireAuth>
                     <Marketplace/>
-                  // </RequireAuth>
+                  </RequireAuth>
                 }/>
                 <Route path="bills" element={
-                  // <RequireAuth>
+                  <RequireAuth>
                     <Bills/>
-                  // </RequireAuth>
+                  </RequireAuth>
                 }/>
                 <Route path="analytics" element={
-                  // <RequireAuth>
+                  <RequireAuth>
                     <Analyics/>
-                  // </RequireAuth>
+                  </RequireAuth>
                 }/>
                 <Route path="accounts" element={
-                  // <RequireAuth>
+                  <RequireAuth>
                     <Accounts/>
-                  // </RequireAuth>
+                  </RequireAuth>
                 }/>
                 <Route path="settings" element={
-                  // <RequireAuth>
+                  <RequireAuth>
                     <Settings/>
-                  // </RequireAuth>
+                  </RequireAuth>
                 }/>
               </Route>
             </Routes>
