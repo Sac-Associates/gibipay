@@ -4,6 +4,10 @@ import { ConsoleLogger } from 'aws-amplify/utils';
 import { Table, TableHead, TableRow, TableCell, TableBody, Loader } from '@aws-amplify/ui-react';
 import { getAccounts as GetAccounts } from '../graphql/queries';
 import Account from './Account';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+
+
 
 const logger = new ConsoleLogger("Accounts");
 
@@ -38,7 +42,7 @@ export default function Accounts({ id, updateAccounts }) {
     <Table highlightOnHover={true} variation="striped">
       <TableHead>
         <TableRow>
-          <TableCell as="th">Name</TableCell>
+          <TableCell as="th">Namezzzz</TableCell>
           <TableCell as="th">Balances</TableCell>
           <TableCell as="th">Type</TableCell>
           <TableCell as="th">Subtype</TableCell>
@@ -55,7 +59,7 @@ export default function Accounts({ id, updateAccounts }) {
         ) : (
           accounts.length ? (
             accounts.map((account) => {
-              return <Account key={account.account_id} account={account}/>;
+              return <Card variant="outlined">{card}</Card>;
             })
           ) : (
             <TableRow>
