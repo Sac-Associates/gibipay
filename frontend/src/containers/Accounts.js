@@ -9,6 +9,10 @@ import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+import { React } from 'react';
+import Button from '@mui/material/Button';
+
 
 const logger = new ConsoleLogger("Protected");
 
@@ -27,6 +31,15 @@ export default function   Protected() {
       logger.error('unable to get items', err);
     }
   }
+
+  const bull = (
+    <Box
+      component="span"
+      sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
+    >
+      •
+    </Box>
+  );
 
   useEffect(() => {
     getItems();
