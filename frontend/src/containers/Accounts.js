@@ -8,7 +8,7 @@ import Institutions from '../components/Institutions';
 
 const logger = new ConsoleLogger("Protected");
 
-export default function Protected() {
+export default function   Protected() {
   const [items, setItems] = useState([]);
   const client = generateClient();
 
@@ -34,6 +34,7 @@ export default function Protected() {
       {(items && items.length) ? (
         <View>
           <Heading>Institutions</Heading>
+          <p>Account Found!!</p>
           <Institutions institutions={items}/>
         </View>
       ) : (<div/>)
