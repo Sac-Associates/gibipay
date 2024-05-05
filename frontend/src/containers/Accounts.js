@@ -51,7 +51,7 @@ export default function   Protected() {
           Word of the Day
         </Typography>
         <Typography variant="h5" component="div">
-          be{bull}nev{bull}o{bull}lent
+          Card example
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
           adjective
