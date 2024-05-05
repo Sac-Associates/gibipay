@@ -1,27 +1,4 @@
-# AWS Plaid Demo
-
-### Table of contents
-
-1. [Introduction](#introduction)
-2. [Architecture](#architecture)
-3. [Prerequisites](#prerequisites)
-4. [Tools and services](#tools-and-services)
-5. [Usage](#usage)
-6. [Clean up](#clean-up)
-7. [Reference](#reference)
-8. [Contributing](#contributing)
-9. [License](#license)
-
-## Introduction
-
-This repo demonstrates how to build a Fintech app on AWS that uses [Plaid Link](https://plaid.com/plaid-link/) to connect a user to their bank account. The app allows users to sign up using [Amazon Cognito](https://aws.amazon.com/cognito/), select their bank from a list, log in to the bank, and display the accounts. The app is built using [AWS Amplify](https://aws.amazon.com/amplify/), [Amazon API Gateway](https://aws.amazon.com/api-gateway/), Amazon Cognito, [AWS Secrets
-Manager](https://aws.amazon.com/secrets-manager/), [Amazon Simple Queue Service](https://aws.amazon.com/sqs/) and [Amazon DynamoDB](https://aws.amazon.com/dynamodb/).
-
-## Architecture
-
-![architecture](doc/architecture.png)
-
-The architecture consists of a [React](https://reactjs.org/) application hosted on [Amplify Hosting](https://aws.amazon.com/amplify/hosting/). The API is an AWS Lambda function behind an Amazon API Gateway. The API stores and retrieves data from DynamoDB. When [webhooks](https://plaid.com/docs/api/webhooks/) are received from Plaid, those are stored in a FIFO SQS queue for processing.
+# GibiPay main repo 
 
 ## Prerequisites
 
@@ -30,7 +7,20 @@ The architecture consists of a [React](https://reactjs.org/) application hosted 
 - [AWS Serverless Application Model (SAM)](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-getting-started.html), installed
 - [Docker Desktop](https://www.docker.com/products/docker-desktop), installed
 - [GitHub](https://github.com) account
-- [Plaid](https://plaid.com/) account
+- [Plaid](https://plaid.com/) account 
+
+## Deployment
+sam deploy \
+  --guided \
+  --tags "GITHUB_ORG=<YOUR_ORG_NAME> GITHUB_REPO=<Gihub_Repo_Name>"
+
+## Architecture
+
+![architecture](doc/architecture.png)
+
+The architecture consists of a [React](https://reactjs.org/) application hosted on [Amplify Hosting](https://aws.amazon.com/amplify/hosting/). The API is an AWS Lambda function behind an Amazon API Gateway. The API stores and retrieves data from DynamoDB. When [webhooks](https://plaid.com/docs/api/webhooks/) are received from Plaid, those are stored in a FIFO SQS queue for processing.
+
+
 
 ## Tools and services
 
