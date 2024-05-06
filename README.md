@@ -88,6 +88,7 @@ SAM configuration file [samconfig.toml]:
 SAM configuration environment [default]:
 ```
 
+
 SAM will then monitor the CloudFormation stack as its being deployed. Once CloudFormation completes, you can access the application within the [Amplify Console](https://console.aws.amazon.com/amplify/home) to monitor the deployment progress.
 
 #### Testing the Application
