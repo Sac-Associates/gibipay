@@ -1,4 +1,4 @@
-# GibiPay main repo 
+# GibiPay main repo revived
 
 ## Prerequisites
 
@@ -7,9 +7,10 @@
 - [AWS Serverless Application Model (SAM)](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-getting-started.html), installed
 - [Docker Desktop](https://www.docker.com/products/docker-desktop), installed
 - [GitHub](https://github.com) account
-- [Plaid](https://plaid.com/) account 
+- [Plaid](https://plaid.com/) account
 
 ## Deployment
+
 sam deploy \
   --guided \
   --tags "GITHUB_ORG=<YOUR_ORG_NAME> GITHUB_REPO=<Gihub_Repo_Name>"
@@ -19,8 +20,6 @@ sam deploy \
 ![architecture](doc/architecture.png)
 
 The architecture consists of a [React](https://reactjs.org/) application hosted on [Amplify Hosting](https://aws.amazon.com/amplify/hosting/). The API is an AWS Lambda function behind an Amazon API Gateway. The API stores and retrieves data from DynamoDB. When [webhooks](https://plaid.com/docs/api/webhooks/) are received from Plaid, those are stored in a FIFO SQS queue for processing.
-
-
 
 ## Tools and services
 
@@ -87,7 +86,6 @@ Save arguments to configuration file [Y/n]:
 SAM configuration file [samconfig.toml]:
 SAM configuration environment [default]:
 ```
-
 
 SAM will then monitor the CloudFormation stack as its being deployed. Once CloudFormation completes, you can access the application within the [Amplify Console](https://console.aws.amazon.com/amplify/home) to monitor the deployment progress.
 
